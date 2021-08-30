@@ -41,17 +41,59 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-// document.querySelector('title').textContent = 'Great Idea!'
-const servicesLink = document.querySelectorAll('a:nth-of-type(1)')
-const productLink = document.querySelectorAll('a:nth-of-type(2)');
-const visionLink = document.querySelectorAll('a:nth-of-type(3)')
-const featuresLink = document.querySelectorAll('a:nth-of-type(4)')
-const aboutLink = document.querySelectorAll('a:nth-of-type(5)')
-const contactLink = document.querySelectorAll('a:nth-of-type(6)');
+document.querySelector('title').textContent = 'Great Idea!'
 
-servicesLink.textContent = "Services";
-productLink.textContent = "Product";
-visionLink.textContent = "Vision";
-featuresLink.textContent = "Features";
-aboutLink.textContent = "About";
-contactLink.textContent = "Contact";
+const allLinks = document.querySelectorAll('a');
+for(let i = 0; i < allLinks.length; i++){
+  const current = allLinks[i];
+  current.textContent = siteContent["nav"][`nav-item-${i+1}`];
+}
+
+console.log(allLinks);
+// ^^^ this is simplified code for the code that's commented out below
+// const servicesLink = document.querySelector('a:nth-of-type(1)')
+// const productLink = document.querySelector('a:nth-of-type(2)');
+// const visionLink = document.querySelector('a:nth-of-type(3)')
+// const featuresLink = document.querySelector('a:nth-of-type(4)')
+// const aboutLink = document.querySelector('a:nth-of-type(5)')
+// const contactLink = document.querySelector('a:nth-of-type(6)');
+
+// servicesLink.textContent = siteContent["nav"]["nav-item-1"];
+// productLink.textContent = siteContent["nav"]["nav-item-2"];
+// visionLink.textContent = siteContent["nav"]["nav-item-3"];
+// featuresLink.textContent = siteContent["nav"]["nav-item-4"];
+// aboutLink.textContent = siteContent["nav"]["nav-item-5"];
+// contactLink.textContent = siteContent["nav"]["nav-item-6"];
+
+
+// Get Started Section
+document.querySelector('.cta h1').innerHTML = siteContent['cta']['h1']
+document.querySelector('.cta button').textContent = siteContent['cta']['button'];
+document.querySelector('.cta img').src = siteContent['cta']['img-src'];
+
+
+// Top Content
+document.querySelector(".top-content .text-content:nth-of-type(1) h4").textContent = siteContent['main-content']['features-h4'];
+document.querySelector(".top-content .text-content:nth-of-type(1) p").textContent = siteContent['main-content']['features-content'];
+document.querySelector(".top-content .text-content:nth-of-type(2) h4").textContent = siteContent['main-content']['about-h4'];
+document.querySelector(".top-content .text-content:nth-of-type(2) p").textContent = siteContent['main-content']['about-content'];
+
+
+// Middle Image
+document.querySelector('#middle-img').src = siteContent['main-content']['middle-img-src'];
+
+
+// Bottom Content
+document.querySelector('.bottom-content .text-content:nth-of-type(1) h4').textContent = siteContent['main-content']['services-h4'];
+document.querySelector('.bottom-content .text-content:nth-of-type(1) p').textContent = siteContent['main-content']['services-content'];
+
+document.querySelector('.bottom-content .text-content:nth-of-type(2) h4').textContent = siteContent['main-content']['product-h4'];
+document.querySelector('.bottom-content .text-content:nth-of-type(2) p').textContent = siteContent['main-content']['product-content'];
+
+document.querySelector('.bottom-content .text-content:nth-of-type(3) h4').textContent = siteContent['main-content']['vision-h4'];
+document.querySelector('.bottom-content .text-content:nth-of-type(3) p').textContent = siteContent['main-content']['vision-content'];
+
+
+// Contact Section
+document.querySelector('.contact h4').textContent = siteContent['contact']['contact-h4'];
+// document.querySelector('.contact p:nth-of-type(1)').textContent = 
