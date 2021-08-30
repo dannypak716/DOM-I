@@ -49,8 +49,8 @@ for(let i = 0; i < allLinks.length; i++){
   current.textContent = siteContent["nav"][`nav-item-${i+1}`];
 }
 
-console.log(allLinks);
-// ^^^ this is simplified code for the code that's commented out below
+// the above is simplified code for the code that's commented out below:
+
 // const servicesLink = document.querySelector('a:nth-of-type(1)')
 // const productLink = document.querySelector('a:nth-of-type(2)');
 // const visionLink = document.querySelector('a:nth-of-type(3)')
@@ -66,10 +66,14 @@ console.log(allLinks);
 // contactLink.textContent = siteContent["nav"]["nav-item-6"];
 
 
+
 // Get Started Section
-document.querySelector('.cta h1').innerHTML = siteContent['cta']['h1']
+// document.querySelector('.cta h1').textContent = siteContent['cta']['h1']  *** I wrote then commented this out because I know this is the way you wanted us to do this assignment, by calling siteContent properties but there are breaks between the words in DOM IS AWESOME so I want to utilize innerHTML to including those breaks.  Please see below:
+
+document.querySelector('.cta h1').innerHTML = 'Dom<br> Is<br> Awesome';
 document.querySelector('.cta button').textContent = siteContent['cta']['button'];
 document.querySelector('.cta img').src = siteContent['cta']['img-src'];
+
 
 
 // Top Content
@@ -96,4 +100,10 @@ document.querySelector('.bottom-content .text-content:nth-of-type(3) p').textCon
 
 // Contact Section
 document.querySelector('.contact h4').textContent = siteContent['contact']['contact-h4'];
-// document.querySelector('.contact p:nth-of-type(1)').textContent = 
+document.querySelector('.contact p:nth-of-type(1)').textContent = siteContent['contact']['address'];
+document.querySelector('.contact p:nth-of-type(2)').textContent = siteContent['contact']['phone'];
+document.querySelector('.contact p:nth-of-type(3)').textContent = siteContent['contact']['email'];
+
+
+// Footer 
+document.querySelector('footer').textContent = siteContent['footer']['copyright'];
